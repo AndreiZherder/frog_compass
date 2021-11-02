@@ -1,3 +1,4 @@
+import sys
 from os import listdir
 from pathlib import Path
 from typing import List
@@ -25,3 +26,5 @@ filenames2 = filenames[1::2]
 Path(output_dir).mkdir(parents=True, exist_ok=True)
 combine_files(filenames1, 'field1.txt')
 combine_files(filenames2, 'field2.txt')
+print(sys.version)
+print('Done successfully!')
