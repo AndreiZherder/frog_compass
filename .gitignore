@@ -134,6 +134,7 @@ dmypy.json
 # data
 input
 output
+raw
 
 # IDE
 .idea
