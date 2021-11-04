@@ -18,7 +18,7 @@ def combine_files(filenames: List, output_filename: str):
             ouf.write('\n')
 
 
-input_dir = './input/'
+input_dir = './detrended/'
 output_dir = './output/'
 filenames = natsorted([f for f in listdir(input_dir) if Path(input_dir + f).is_file()])
 filenames1 = filenames[::2]
@@ -27,4 +27,4 @@ Path(output_dir).mkdir(parents=True, exist_ok=True)
 combine_files(filenames1, 'field1.txt')
 combine_files(filenames2, 'field2.txt')
 print(sys.version)
-print('Done successfully!')
+print('Files combine done successfully!')
