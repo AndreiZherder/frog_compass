@@ -6,9 +6,10 @@ import numpy as np
 
 input_dir = './raw/'
 output_dir = './detrended/'
+filenames = [f for f in listdir(input_dir) if Path(input_dir + f).is_file()]
+Path(output_dir).mkdir(parents=True, exist_ok=True)
 for f in Path(output_dir).glob('*.*'):
     f.unlink()
-filenames = [f for f in listdir(input_dir) if Path(input_dir + f).is_file()]
 
 for filename in filenames:
     with open(input_dir + filename, 'r', encoding='utf-8') as inf:
