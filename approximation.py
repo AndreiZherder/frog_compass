@@ -42,7 +42,7 @@ def main():
     fig.set_figwidth(16)
     fig.set_figheight(8)
     ax.set_xlabel('time, s')
-    ax.set_ylabel('voltage, V')
+    ax.set_ylabel('response, pA')
     ax.set_title(title)
     ax.legend(prop={"size": 14})
     ax.grid()
