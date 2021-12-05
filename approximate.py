@@ -10,10 +10,10 @@ def func(x, a, b, c):
 
 def main():
     print(sys.version)
-    input_dir = './approximation/'
-    filename = '15.asc'
+    input_dir = './approximate/'
+    filename = '16.asc'
     left = 1.7
-    right = 12
+    right = 12.8
     time_resolution = 0.01
 
     with open(input_dir + filename, 'r', encoding='utf-8') as inf:
@@ -31,14 +31,17 @@ def main():
     popt, pcov = optimize.curve_fit(func, x, y, [1, 0, 0])
     print(f'a = {popt[0]:.3f}, b = {popt[1]:.3f}, c = {popt[2]:.3f}')
     fit = func(x, *popt)
-    res = stats.linregress(y, fit)
-    print(f'R-squared = {res.rvalue ** 2:.3f}')
+    rvalue = stats.linregress(y, fit).rvalue
+    print(f'R-squared = {rvalue ** 2:.3f}')
 
     fig, ax = plt.subplots()
     ax.plot(t, v)
     ax.plot(x, y)
     ax.plot(x, fit, label=f'a * exp(-b * x) + c\n'
-                          f'a = {popt[0]:.3f}\nb = {popt[1]:.3f}\nc = {popt[2]:.3f}\nR-squared = {res.rvalue ** 2:.3f}')
+                          f'a = {popt[0]:.3f}\n'
+                          f'b = {popt[1]:.3f}\n'
+                          f'c = {popt[2]:.3f}\n'
+                          f'R-squared = {rvalue ** 2:.3f}')
     fig.set_figwidth(16)
     fig.set_figheight(8)
     ax.set_xlabel('time, s')
