@@ -132,6 +132,7 @@ dmypy.json
 *.txt
 
 # data
+approximation
 detrended
 output
 raw
