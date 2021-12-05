@@ -1,1 +1,3 @@
-jupyter notebook approximation.ipynb
+@echo off
+python approximation.py
+pause
