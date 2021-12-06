@@ -1,3 +1,3 @@
 @echo off
-python approximate.py
+jupyter notebook approximate.ipynb
 pause
