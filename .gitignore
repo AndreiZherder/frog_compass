@@ -137,7 +137,7 @@ detrended
 output
 raw
 bak
-tmp
+data
 
 # IDE
 .idea
