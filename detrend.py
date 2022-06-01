@@ -13,7 +13,7 @@ for f in Path(output_dir).glob('*.*'):
 
 for filename in filenames:
     with open(input_dir + filename, 'r', encoding='utf-8') as inf:
-        v = [float(_.strip()) for _ in inf.readlines()]
+        v = [float(_.replace(',', '.')) for _ in inf.readlines()]
     n = len(v)
     v = np.array(v)
     t = np.linspace(0, (n - 1), n)
